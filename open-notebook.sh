@@ -6,7 +6,7 @@
 
 
 # Clone repository and give permissions to the onyxia user
-GIT_REPO=python-for-quali
+GIT_REPO=bso_p8
 git clone --depth 1 https://github.com/luneauaymeric/${GIT_REPO}.git
 chown -R onyxia:users ${GIT_REPO}/
 
