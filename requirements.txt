@@ -4,3 +4,4 @@ numpy
 ipysigma
 networkx
 pelote
+contextily
