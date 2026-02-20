@@ -6,27 +6,46 @@ import os
 import glob
 import datetime
 import tqdm
-
+import s3fs
 
 # fonction pour extraire une liste d'identifiant hal
 
-def get_list_idhal(path_file, column):
+def get_list_idhal(path_file, column, is_local=True):
     list_idhal = []
-    with open(path_file, newline='') as csvfile:
-    
-        reader = csv.DictReader(csvfile)
-    
-        for row in reader:
-            if row[column] != '':
-                split_id = row[column].split('|')
-                list_id = [x for x in split_id]
-                for y in list_id:
-                    if y not in list_idhal:
-                        list_idhal.append(y)
-                    else:
-                        pass
-            else:
-                pass
+    if is_local == True:
+        with open(path_file, newline='') as csvfile:
+        
+            reader = csv.DictReader(csvfile)
+        
+            for row in reader:
+                if row[column] != '':
+                    split_id = row[column].split('|')
+                    list_id = [x for x in split_id]
+                    for y in list_id:
+                        if y not in list_idhal:
+                            list_idhal.append(y)
+                        else:
+                            pass
+                else:
+                    pass
+    else:
+        S3_ENDPOINT_URL = "https://" + os.environ["AWS_S3_ENDPOINT"]
+        fs = s3fs.S3FileSystem(client_kwargs={'endpoint_url': S3_ENDPOINT_URL})
+
+        with fs.open(path_file, 'r', newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+
+            for row in reader:
+                if row['authhalid_i'] != '':
+                    split_id = row['authhalid_i'].split('|')
+                    list_id = [x for x in split_id]
+                    for y in list_id:
+                        if y not in list_idhal:
+                            list_idhal.append(y)
+                        else:
+                            pass
+                else:
+                    pass
     print("nombre d'identifiant : ", len(list_idhal))
 
     return list_idhal
