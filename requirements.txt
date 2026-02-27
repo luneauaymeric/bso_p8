@@ -5,3 +5,5 @@ ipysigma
 networkx
 pelote
 contextily
+myst-nb
+squarify
