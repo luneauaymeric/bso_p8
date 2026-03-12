@@ -7,3 +7,4 @@ pelote
 contextily
 myst-nb
 squarify
+spacy
