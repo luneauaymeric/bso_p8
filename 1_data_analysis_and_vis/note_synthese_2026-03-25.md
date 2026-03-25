@@ -63,6 +63,56 @@ Le deuxième cas de figure est plus compliqué puisqu'il suppose d'extraire des 
 
 Une fois les rors récupérés, nous avons interrogé l'API du Research Organisation Registry ([https://api.dev.ror.org/organizations](https://api.dev.ror.org/organizations)) puis extrait les données suivantes : le nom de l'organisme, lse noms de la ville, du pays et du continent, ainsi que la latitude et la longitude.
 
+### Les pays associés à Paris 8
+
+Sur 43 139 publications, 99% d'entre elles ont au moins un auteur appartenant à un organisme de recherche français, comme l'indique le tableau ci-dessous. Ce qui n'est pas surpprenant puisque une publication doit avoir au moins un auteur affilié à Paris 8, donc à la France, pour figurer dans le baromètre local.
+
+Une fois retirée les affiliations à un organisme français, on compte 2578 publication ayant au moins un auteur affilié à un organisme de recherche étranger. Sur cet esemble, la Suisse apparaît dans 13% des cas. Après la Suisse, les 10 pays avec lesquels les chercheurs de Paris 8 semblent publier le plus sont : les États-Unis d'Amérique, l'Italie, la Belgique, le Canada, l'Allemagne, le Royaume-Uni, l'Espagne et le Brésil.
+
+|    | country_name   |   nb |   freq (%) |
+|---:|:---------------|-----:|-------:|
+|  0 | Switzerland    |  330 |   12.8 |
+|  1 | United States  |  288 |   11.2 |
+|  2 | Italy          |  283 |   11.0   |
+|  3 | Belgium        |  236 |    9.2 |
+|  4 | Canada         |  228 |    8.8 |
+|  5 | Germany        |  179 |    6.9 |
+|  6 | United Kingdom |  175 |    6.8 |
+|  7 | Spain          |  149 |    5.8 |
+|  8 | Tunisia        |   99 |    3.8 |
+|  9 | Brazil         |   85 |    3.3 |
 
 
+### Les organismes associées à Paris 8
+
+L'analyse des liens avec les organismes de recherche est compliquée par le fait que les informations collectées mélangent des organisations de taille différentes : université, laboratoire, EPST (CNRS, INRAe, IRD, etc.). De plus, ces organisations sont liées entre elles. Par exemple, le laboratoire Structure Formelle du Langage (SFL) est une UMR en cotutelle avec le CNRS et l'Université Paris 8. Un travail supplémentaire serait nécessaire pour distinguer des catégories d'organisme et effectuer une analyse par catégorie. Le tableau ci-dessous donne le nom des 10 premières institutions associés dans les publications à Paris 8.
+
+|    | nom                                                            |    nb |   freq |
+|---:|:---------------------------------------------------------------|------:|-------:|
+|  0 | Centre National de la Recherche Scientifique                   | 25030 |   78.2 |
+|  1 | Université Paris Nanterre                                      | 20803 |   65   |
+|  2 | Université Paris 1 Panthéon-Sorbonne                           | 12930 |   40.4 |
+|  3 | Ministère de la Culture                                        |  8082 |   25.2 |
+|  4 | Archéologies et Sciences de l’Antiquité                        |  7809 |   24.4 |
+|  5 | Université Paris Cité                                          |  3555 |   11.1 |
+|  6 | HESAM Université                                               |  3115 |    9.7 |
+|  7 | École Nationale Supérieure d'Architecture de Paris-La Villette |  3068 |    9.6 |
+|  8 | École Nationale Supérieure d'Architecture Paris-Val de Seine   |  3038 |    9.5 |
+|  9 | Laboratoire Architecture Ville Urbanisme Environnement         |  3036 |    9.5 |
+
+
+Concernant les universités étrangères, les mêmes précautions doivent être prises concernant l'interprétation des résultats. Toutefois, la liste des dix premières institutions recoupe la liste des dix premiers pays.
+
+|    | nom                             |   nb |   freq |
+|---:|:--------------------------------|-----:|-------:|
+|  0 | University of Geneva            |  151 |    5.9 |
+|  1 | École Française de Rome         |  126 |    4.9 |
+|  2 | Centre Marc Bloch               |   80 |    3.1 |
+|  3 | Université Libre de Bruxelles   |   74 |    2.9 |
+|  4 | University of Liège             |   71 |    2.8 |
+|  5 | UCLouvain                       |   70 |    2.7 |
+|  6 | Université du Québec à Montréal |   70 |    2.7 |
+|  7 | Université de Montréal          |   56 |    2.2 |
+|  8 | University of Turin             |   55 |    2.1 |
+|  9 | University of Lausanne          |   50 |    1.9 |
 
