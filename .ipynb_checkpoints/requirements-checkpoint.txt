@@ -8,3 +8,4 @@ contextily
 myst-nb
 squarify
 spacy
+bertopic
